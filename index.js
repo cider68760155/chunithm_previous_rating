@@ -3,7 +3,9 @@
 })();
 
 function set_text(text) {
+    $('#result').append('<div>');
     $('#result').append(text);
+    $('#result').append('</div>')
 }
 
 function reset_text() {
@@ -85,7 +87,7 @@ function main() {
         else {
             let to_push = "<div>" + version + "までの楽曲のみだと<b>" + String(Math.floor(sum * 100 / 30) / 100) + "</b>です</div>";
             print_text += to_push;
-            if (i % 2 == 1) tweet_text += to_push;
+            if (i % 2 == 0) tweet_text += to_push;
         }
     }
     set_text(print_text);
