@@ -40,8 +40,8 @@ def get_song_id_list(since: datetime.date, until: datetime.date):
     Return:
     since以降、until以前に追加された曲のIDのリスト
     """
-    req_url = "https://api.chunirec.net/1.2/music/search.json"
-    req = requests.get(req_url+"?token="+get_token() +
+    req_url = "https://api.chunirec.net/2.0/music/search.json"
+    req = requests.get(req_url+"?region=jp2&token="+get_token() +
                        "&q=since:"+since.strftime("%Y-%m-%d") +
                        " until:"+until.strftime("%Y-%m-%d"))
     return [song['id'] for song in req.json()]

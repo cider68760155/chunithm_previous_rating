@@ -19,8 +19,8 @@
         <summary>注意事項</summary>
         <div>・このツールを使用するには<a href="https://chunirec.net">chunirec</a>への登録が必要です。</div>
         <div>・chunirecの設定でプロフィールが非公開になっているとこのツールを使用できません。</div>
-        <div>・現在のベスト枠は2021/6/10更新分までの楽曲から計算しています。多分最新だと思いますが、更新が滞っていたらすみません。</div>
-        <div>・昔のベスト枠は譜面定数の変動を考慮しておりません。現在の定数、現在のスコアでレートがいくつになるのかを計算しています。</div>
+        <div>・現在のベスト枠は2021/11/4更新分までの楽曲から計算しています。多分最新だと思いますが、更新が滞っていたらすみません。</div>
+        <div>・昔のベスト枠は譜面定数の変動を考慮しておりません。現在の定数、現在のレート計算式でレートがいくつになるのかを計算しています。</div>
         <div>・chunirec APIの仕様でアクセスが集中すると結果が表示できないことがあります(15分で120アクセスまで)。エラーが出た場合は少し時間をおいて再度お試しください。</div>
         <div>・気づいたことがありましたら<a href="https://twitter.com/cider33329448">Twitter</a>から報告をいただけますと幸いです。</div>
     </details>
@@ -48,7 +48,7 @@
             $json = new Services_JSON;
             $token_json = file_get_contents('./token.json');
             $chunirec_token = $json->decode($token_json)->{'CHUNIREC_TOKEN'};
-            $result_json = curl_get_contents("https://api.chunirec.net/1.2/records/showall.json?token=" . $chunirec_token . "&user_name=" . $chunirec_id);
+            $result_json = curl_get_contents("https://api.chunirec.net/2.0/records/showall.json?region=jp2&token=" . $chunirec_token . "&user_name=" . $chunirec_id);
             echo $result_json
             ?>;
     </script>
