@@ -85,7 +85,7 @@ function main() {
             tweet_text = to_push + tweet_text;
         }
         else {
-            let to_push = "<div>" + version + "までの楽曲のみだと<b>" + String(Math.floor(sum * 100 / 30) / 100) + "</b>です</div>";
+            let to_push = "<div>" + version + "までだと<b>" + String(Math.floor(sum * 100 / 30) / 100) + "</b>です</div>";
             print_text += to_push;
             if (i % 2 == 0) tweet_text += to_push;
         }
