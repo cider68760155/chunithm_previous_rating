@@ -6,4 +6,3 @@ python get_id.py
 git checkout -b auto-update
 git add -A
 git commit -m "automatically updated at ${date}"
-git push
